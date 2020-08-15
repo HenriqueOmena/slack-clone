@@ -1,12 +1,14 @@
 import React from 'react';
-import './App.css';
+import { Header } from 'layout/header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       <h1>slack clone</h1>
-      </header>
+      <h1>slack clone</h1>
+      <Header />
+      {/* TODO: Header */}
+      {/* TODO: SideBar */}
+      {/* TODO: React-Router -> char screen */}
     </div>
   );
 }
