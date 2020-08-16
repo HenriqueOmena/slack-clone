@@ -17,10 +17,27 @@ const sideBarStyle = makeStyles(theme =>
     info: {
       flex: 1,
     },
+    titleH2: {
+      fontSize: 15,
+      fontWeight: 900,
+      marginBottom: 5,
+    },
+    titleH3: {
+      display: 'flex',
+      alignItems: 'center',
+      fontSize: 13,
+      fontWeight: 400,
+      marginBottom: 5,
+    },
+    iconName: {
+      fontSize: 14,
+      marginRight: 2,
+      color: 'green',
+    },
     iconCreate: {
-      padding: 8,
+      padding: 3,
       color: theme.palette.primary.main,
-      fontSize: 18,
+      fontSize: 20,
       backgroundColor: 'white',
       borderRadius: 999,
     },
