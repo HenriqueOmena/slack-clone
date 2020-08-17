@@ -1,5 +1,4 @@
 import { makeStyles, createStyles } from '@material-ui/core/styles';
-import { TextareaAutosize } from '@material-ui/core';
 
 const headerStyles = makeStyles(theme =>
   createStyles({

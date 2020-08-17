@@ -41,6 +41,10 @@ const sideBarStyle = makeStyles(theme =>
       backgroundColor: 'white',
       borderRadius: 999,
     },
+    hr: {
+      margin: '10px 0',
+      border: `solid 1px ${theme.palette.primary.light}`,
+    },
   })
 );
 
