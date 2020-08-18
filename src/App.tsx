@@ -5,7 +5,6 @@ import { Sidebar } from 'layout/sidebar';
 function App() {
   return (
     <div className="App">
-      <h1>slack clone</h1>
       <Header />
       <Sidebar />
       {/* TODO: React-Router -> char screen */}
