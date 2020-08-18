@@ -17,7 +17,9 @@ const sidebarOptionStyle = makeStyles(theme =>
       padding: 10,
       fontSize: 35,
     },
-    hash: {},
+    hash: {
+      padding: 10,
+    },
     channel: {
       padding: '10px 0',
       fontWeight: 500,
