@@ -3,10 +3,11 @@ import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import CreateIcon from '@material-ui/icons/Create';
 import InsertCommentIcon from '@material-ui/icons/InsertComment';
 import db from 'firebaseConfig';
+import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 import sidebarStyle from './sidebar.styles';
 import SidebarOption from './components/sidebar-option';
 
-interface Channel {
+export interface Channel {
   id: string;
   name: string;
 }
@@ -41,8 +42,18 @@ const Sidebar = () => {
       <SidebarOption title="Whatever Channel" />
       <SidebarOption title="Threads" icon={InsertCommentIcon} />
       <hr className={classes.hr} />
+      <SidebarOption
+        title="Add Channel"
+        icon={AddOutlinedIcon}
+        addChannelOption
+      />
+
       {channels.map(channel => (
-        <SidebarOption title={channel.name} id={channel.id} />
+        <SidebarOption
+          title={channel.name}
+          id={channel.id}
+          key={channel.name}
+        />
       ))}
     </div>
   );
