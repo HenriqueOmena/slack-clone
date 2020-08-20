@@ -5,6 +5,9 @@ const chatStyle = makeStyles(theme =>
     chat: {
       border: 'solid 1px red',
       flex: 0.7,
+      flexGrow: 1,
+      overflowY: 'scroll',
+      paddingBottom: 150,
     },
     header: {
       display: 'flex',
@@ -15,9 +18,22 @@ const chatStyle = makeStyles(theme =>
     },
     headerLeft: {},
     channelName: {
+      display: 'flex',
       textTransform: 'lowercase',
     },
-    headerRight: {},
+    headerRight: {
+      display: 'flex',
+      alignItems: 'center',
+      fontSize: 14,
+    },
+    starIcon: {
+      marginLeft: 10,
+      fontSize: 18,
+    },
+    infoIcon: {
+      marginRight: 5,
+      fontSize: 16,
+    },
   })
 );
 

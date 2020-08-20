@@ -15,13 +15,11 @@ const Chat = () => {
         <div className={classes.headerLeft}>
           <h4 className={classes.channelName}>
             <strong># general</strong>
-            <StarBorderOutlinedIcon />
+            <StarBorderOutlinedIcon className={classes.starIcon} />
           </h4>
         </div>
         <div className={classes.headerRight}>
-          <p>
-            <InfoOutlinedIcon />
-          </p>
+          <InfoOutlinedIcon className={classes.infoIcon} /> Details
         </div>
       </div>
     </div>
