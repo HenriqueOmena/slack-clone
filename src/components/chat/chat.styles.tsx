@@ -1,9 +1,8 @@
 import { makeStyles, createStyles } from '@material-ui/core';
 
-const chatStyle = makeStyles(theme =>
+const chatStyle = makeStyles(() =>
   createStyles({
     chat: {
-      border: 'solid 1px red',
       flex: 0.7,
       flexGrow: 1,
       overflowY: 'scroll',
