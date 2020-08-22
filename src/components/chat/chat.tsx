@@ -11,6 +11,7 @@ const Chat = () => {
   const { idChannel } = useParams();
   // TODO: fix types for this state
   const [channelDetails, setChannelDetails] = useState<any>();
+  const [channelMessages, setChannelMessages] = useState<any>();
 
   useEffect(() => {
     if (idChannel) {
@@ -18,7 +19,18 @@ const Chat = () => {
         .doc(idChannel)
         .onSnapshot(snapshot => setChannelDetails(snapshot.data()));
     }
+
+    db.collection('channels')
+      .doc(idChannel)
+      .collection('messages')
+      .orderBy('date', 'asc')
+      .onSnapshot(snapshot => {
+        console.log(snapshot.docs);
+        setChannelMessages(snapshot.docs.map(doc => doc.data()));
+      });
   }, [idChannel]);
+
+  console.log(channelMessages);
   return (
     <div className={classes.chat}>
       <div className={classes.header}>
@@ -28,10 +40,13 @@ const Chat = () => {
             <StarBorderOutlinedIcon className={classes.starIcon} />
           </h4>
         </div>
+
         <div className={classes.headerRight}>
           <InfoOutlinedIcon className={classes.infoIcon} /> Details
         </div>
       </div>
+
+      <div className="chatMessages"></div>
     </div>
   );
 };

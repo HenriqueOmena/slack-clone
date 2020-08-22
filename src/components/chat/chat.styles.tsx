@@ -33,6 +33,7 @@ const chatStyle = makeStyles(() =>
       marginRight: 5,
       fontSize: 16,
     },
+    chatMessages: {},
   })
 );
 
