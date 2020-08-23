@@ -3,15 +3,15 @@ import { useParams } from 'react-router-dom';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
 import db from 'firebaseConfig';
-
 import chatStyle from './chat.styles';
+import Message, { MessageI } from './components/message';
 
 const Chat = () => {
   const classes = chatStyle();
   const { idChannel } = useParams();
   // TODO: fix types for this state
   const [channelDetails, setChannelDetails] = useState<any>();
-  const [channelMessages, setChannelMessages] = useState<any>();
+  const [channelMessages, setChannelMessages] = useState<any>([]);
 
   useEffect(() => {
     if (idChannel) {
@@ -46,7 +46,17 @@ const Chat = () => {
         </div>
       </div>
 
-      <div className="chatMessages"></div>
+      <div className="chatMessages">
+        {channelMessages.map(
+          (
+            message: JSX.IntrinsicAttributes &
+              MessageI & { children?: React.ReactNode },
+            index: any
+          ) => (
+            <Message {...message} key={index} />
+          )
+        )}
+      </div>
     </div>
   );
 };
