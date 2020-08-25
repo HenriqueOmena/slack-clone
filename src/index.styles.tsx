@@ -9,6 +9,16 @@ const globalTheme = createMuiTheme({
         },
       },
     },
+    MuiButton: {
+      outlinedPrimary: {
+        backgroundColor: 'green',
+        color: 'white',
+        '&:hover': {
+          backgroundColor: 'green',
+          opacity: 0.8,
+        },
+      },
+    },
   },
   palette: {
     primary: {

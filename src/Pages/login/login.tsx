@@ -4,7 +4,7 @@ import { auth, provider } from 'firebaseConfig';
 import loginStyle from './login.styles';
 
 const Login = () => {
-  const { container } = loginStyle();
+  const { container, logoSlack, wrapperLogin, button } = loginStyle();
   const signIn = () => {
     auth
       .signInWithPopup(provider)
@@ -13,10 +13,20 @@ const Login = () => {
   };
   return (
     <div className={container}>
-      <div className="wrapperLogin">
-        <h1> Signin on Omena Clone Slack</h1>
+      <div className={wrapperLogin}>
+        <img
+          src="https://a.slack-edge.com/80588/marketing/img/icons/icon_slack_hash_colored.png"
+          alt="Slack Image"
+          className={logoSlack}
+        />
+        <h1> Signin on Omena Slack Clone </h1>
         <p>www.henriqueomena.com</p>
-        <Button variant="outlined" color="default" onClick={signIn}>
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={signIn}
+          className={button}
+        >
           Sign In with Google
         </Button>
       </div>
