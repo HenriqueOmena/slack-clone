@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from '@material-ui/core';
 import { auth, provider } from 'firebaseConfig';
+import Context from 'store/config/config';
+import { LogInUser } from 'store/auth';
 import loginStyle from './login.styles';
 
 const Login = () => {
   const { container, logoSlack, wrapperLogin, button } = loginStyle();
+  const { store, dispatch } = useContext(Context);
+
   const signIn = () => {
     auth
       .signInWithPopup(provider)
-      .then(result => console.log(result))
+      .then(result => {
+        console.log(result);
+        dispatch(LogInUser(result));
+      })
       .catch(error => console.error('====>>>>', error.message));
   };
+
+  console.log(store);
   return (
     <div className={container}>
       <div className={wrapperLogin}>

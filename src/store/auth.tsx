@@ -1,7 +1,6 @@
 export interface Auth {
   auth: {
     user: string | null;
-    email: string | null;
   };
 }
 
@@ -13,7 +12,6 @@ export interface AuthAction {
 export const authStore = {
   auth: {
     user: localStorage.getItem('user'),
-    email: localStorage.getItem('email'),
   },
 };
 
@@ -23,13 +21,10 @@ export const LOGOUT = 'LOGOUT';
 const authReducer = (state = authStore, action: AuthAction) => {
   switch (action.type) {
     case LOGIN:
-      localStorage.setItem('user', action.payload?.user);
-      localStorage.setItem('email', action.payload?.email);
       return {
         auth: {
           ...state.auth,
           user: action.payload?.user,
-          email: action.payload?.email,
         },
       };
 
@@ -39,7 +34,6 @@ const authReducer = (state = authStore, action: AuthAction) => {
         auth: {
           ...state.auth,
           user: '',
-          email: '',
         },
       };
 
@@ -48,14 +42,9 @@ const authReducer = (state = authStore, action: AuthAction) => {
   }
 };
 
-interface ResponseI {
-  additionalUserInfo: {};
-  credential: {};
-  operationType: {};
-  user: {};
-}
+type LogInUser = Record<string, unknown> | null;
 
-export const LogInUser = (data: ResponseI) => {
+export const LogInUser = (data: LogInUser): LogInUser => {
   return {
     type: LOGIN,
     payload: data,
