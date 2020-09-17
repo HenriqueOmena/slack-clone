@@ -13,7 +13,6 @@ const Login = () => {
     auth
       .signInWithPopup(provider)
       .then(result => {
-        console.log(result);
         dispatch(LogInUser(result));
       })
       .catch(error => console.error('====>>>>', error.message));
