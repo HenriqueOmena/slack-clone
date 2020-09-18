@@ -1,17 +1,19 @@
+import { User } from 'firebase';
+
 export interface Auth {
   auth: {
-    user: string | null;
+    user?: User;
   };
 }
 
 export interface AuthAction {
   type: 'LOGIN' | 'LOGOUT';
-  payload?: Record<string, any>;
+  payload?: any;
 }
 
 export const authStore = {
   auth: {
-    user: localStorage.getItem('user'),
+    user: undefined,
   },
 };
 
@@ -24,7 +26,7 @@ const authReducer = (state = authStore, action: AuthAction) => {
       return {
         auth: {
           ...state.auth,
-          user: action.payload?.user,
+          user: action.payload,
         },
       };
 
@@ -44,10 +46,10 @@ const authReducer = (state = authStore, action: AuthAction) => {
 
 type LogInUser = Record<string, unknown> | null;
 
-export const LogInUser = (data: LogInUser): LogInUser => {
+export const LogInUser = (user: User | null): LogInUser => {
   return {
     type: LOGIN,
-    payload: data,
+    payload: user,
   };
 };
 

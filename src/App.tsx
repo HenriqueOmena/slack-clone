@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Header } from 'layout/header';
 import { Sidebar } from 'layout/sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Chat from 'components/chat/chat';
 import AppStyle from 'App.styles';
+import Context from 'store/config/config';
 import { Login } from 'Pages/login';
 
 const App: React.FC = () => {
   const classes = AppStyle();
-  const [user, setUser] = useState(null);
+  const {
+    store: {
+      auth: { user },
+    },
+  } = useContext(Context);
 
   return (
     <div className="App">

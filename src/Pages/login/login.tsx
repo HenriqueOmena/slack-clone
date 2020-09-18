@@ -13,12 +13,12 @@ const Login = () => {
     auth
       .signInWithPopup(provider)
       .then(result => {
-        dispatch(LogInUser(result));
+        dispatch(LogInUser(result.user));
       })
       .catch(error => console.error('====>>>>', error.message));
   };
 
-  console.log(store);
+  console.log('hello history', store);
   return (
     <div className={container}>
       <div className={wrapperLogin}>
