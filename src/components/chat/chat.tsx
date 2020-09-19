@@ -4,7 +4,8 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
 import db from 'firebaseConfig';
 import chatStyle from './chat.styles';
-import Messages from './components/messages';
+import Messages from './components/messages/messages';
+import InputChat from './components/input/Input-chat';
 
 const Chat = () => {
   const classes = chatStyle();
@@ -38,6 +39,8 @@ const Chat = () => {
       <div className="chatMessages">
         <Messages />
       </div>
+
+      <InputChat channelName={channelDetails?.name} />
     </div>
   );
 };
