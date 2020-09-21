@@ -7,7 +7,7 @@ const sideBarStyle = makeStyles(theme =>
       backgroundColor: theme.palette.primary.main,
       color: 'white',
       maxWidth: 260,
-      height: '100vh',
+      height: '93vh',
     },
     header: {
       display: 'flex',

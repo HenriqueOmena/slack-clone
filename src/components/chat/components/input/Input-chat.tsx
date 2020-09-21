@@ -32,6 +32,7 @@ const InputChat: React.FC<InputChat> = ({
         userName: user?.displayName,
       });
     }
+    setInput('');
   };
 
   return (

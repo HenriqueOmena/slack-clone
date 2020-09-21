@@ -9,6 +9,7 @@ const headerStyles = makeStyles(theme =>
       padding: '10px 0',
       backgroundColor: theme.palette.primary.main,
       color: 'white',
+      minHeight: '7vh',
     },
     left: {
       flex: 0.3,

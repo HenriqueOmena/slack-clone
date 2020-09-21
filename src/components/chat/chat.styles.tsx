@@ -5,8 +5,8 @@ const chatStyle = makeStyles(() =>
     chat: {
       flex: 0.7,
       flexGrow: 1,
-      overflowY: 'scroll',
       paddingBottom: 150,
+      maxHeight: '82vh',
     },
     header: {
       display: 'flex',
@@ -33,7 +33,10 @@ const chatStyle = makeStyles(() =>
       marginRight: 5,
       fontSize: 16,
     },
-    chatMessages: {},
+    chatMessages: {
+      overflowY: 'scroll',
+      maxHeight: '76vh',
+    },
   })
 );
 

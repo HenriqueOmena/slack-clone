@@ -36,11 +36,10 @@ const Chat = () => {
         </div>
       </div>
 
-      <div className="chatMessages">
+      <div className={classes.chatMessages}>
         <Messages />
+        <InputChat channelName={channelDetails?.name} channelId={idChannel} />
       </div>
-
-      <InputChat channelName={channelDetails?.name} channelId={idChannel} />
     </div>
   );
 };
