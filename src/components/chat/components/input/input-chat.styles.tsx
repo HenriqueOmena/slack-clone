@@ -1,5 +1,4 @@
 import { makeStyles, createStyles } from '@material-ui/core';
-import { relative } from 'path';
 
 const inputStyle = makeStyles(theme =>
   createStyles({

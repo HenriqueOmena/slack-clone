@@ -13,7 +13,7 @@ export interface Channel {
   name: string;
 }
 
-const Sidebar = () => {
+const Sidebar: React.FC = () => {
   const classes = sidebarStyle();
   const [channels, setChannels] = useState<Channel[]>([]);
   const {
@@ -23,7 +23,6 @@ const Sidebar = () => {
   } = useContext(Context);
 
   useEffect(() => {
-    console.log(1);
     db.collection('channels').onSnapshot(snapshot => {
       setChannels(
         snapshot.docs.map(doc => ({

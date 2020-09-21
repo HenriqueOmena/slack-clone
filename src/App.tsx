@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Header } from 'layout/header';
 import { Sidebar } from 'layout/sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';

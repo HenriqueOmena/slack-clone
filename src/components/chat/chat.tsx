@@ -40,7 +40,7 @@ const Chat = () => {
         <Messages />
       </div>
 
-      <InputChat channelName={channelDetails?.name} />
+      <InputChat channelName={channelDetails?.name} channelId={idChannel} />
     </div>
   );
 };

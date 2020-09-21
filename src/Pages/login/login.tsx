@@ -7,7 +7,7 @@ import loginStyle from './login.styles';
 
 const Login = () => {
   const { container, logoSlack, wrapperLogin, button } = loginStyle();
-  const { store, dispatch } = useContext(Context);
+  const { dispatch } = useContext(Context);
 
   const signIn = () => {
     auth
@@ -18,13 +18,12 @@ const Login = () => {
       .catch(error => console.error('====>>>>', error.message));
   };
 
-  console.log('hello history', store);
   return (
     <div className={container}>
       <div className={wrapperLogin}>
         <img
           src="https://a.slack-edge.com/80588/marketing/img/icons/icon_slack_hash_colored.png"
-          alt="Slack Image"
+          alt="Slack"
           className={logoSlack}
         />
         <h1> Signin on Omena Slack Clone </h1>
