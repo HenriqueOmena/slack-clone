@@ -27,7 +27,7 @@ const Login = () => {
           className={logoSlack}
         />
         <h1> Signin on Omena Slack Clone </h1>
-        <p>www.henriqueomena.com</p>
+        <p>created by : www.henriqueomena.com</p>
         <Button
           variant="outlined"
           color="primary"
