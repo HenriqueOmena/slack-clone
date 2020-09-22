@@ -1,14 +1,15 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import db from 'firebaseConfig';
+import { OverridableComponent } from '@material-ui/core/OverridableComponent';
+import { SvgIconTypeMap } from '@material-ui/core/SvgIcon';
 import sidebarOptionStyle from './sidebar-option.styles';
 
 interface SidebarOption {
-  /* FIXME: need find the type of icon */
-  icon?: any /* OverridableComponent<SvgIconTypeMap<unknown, 'svg'>> */;
+  icon?: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
   title: string;
   id?: string;
-  addChannelOption?: any;
+  addChannelOption?: boolean;
 }
 
 const SidebarOption: React.FC<SidebarOption> = ({
@@ -19,12 +20,10 @@ const SidebarOption: React.FC<SidebarOption> = ({
 }: SidebarOption) => {
   const classes = sidebarOptionStyle();
   const history = useHistory();
-
   const selectChanel = () => {
     const path = id ? `/channel/${id}` : 'title';
     history.push(path);
   };
-
   // TODO: insert a component more pretty and remove prompt
   const addChannel = () => {
     const channelName = prompt('Enter the name of new channel');

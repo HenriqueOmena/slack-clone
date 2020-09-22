@@ -45,7 +45,6 @@ const Sidebar: React.FC = () => {
         </div>
         <CreateIcon className={classes.iconCreate} />
       </div>
-      <SidebarOption title="Whatever Channel" />
       <SidebarOption title="Threads" icon={InsertCommentIcon} />
       <hr className={classes.hr} />
       <SidebarOption
