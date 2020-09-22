@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import db from 'firebaseConfig';
 import { useParams } from 'react-router-dom';
 import messageStyle from './messages.style';
@@ -10,11 +10,21 @@ export interface MessageI {
   userImage: string;
 }
 
+type Messages = firebase.firestore.DocumentData;
+
 const Messages: React.FC = () => {
   const { container, messageInfo, avatarImg, dateInfo } = messageStyle();
   const { idChannel } = useParams();
-  // TODO: Fix Types for this state
-  const [channelMessages, setChannelMessages] = useState<any>([]);
+  const [channelMessages, setChannelMessages] = useState<Messages>([]);
+  const divContainerRef = useRef<HTMLDivElement>(null);
+  const scrollToRef = () => {
+    if (divContainerRef.current) {
+      divContainerRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
 
   useEffect(() => {
     db.collection('channels')
@@ -25,10 +35,10 @@ const Messages: React.FC = () => {
         setChannelMessages(snapshot.docs.map(doc => doc.data()))
       );
   }, [idChannel]);
-
+  scrollToRef();
   return channelMessages.map(
     ({ message, date, userName, userImage }: MessageI, index: number) => (
-      <div className={container} key={index}>
+      <div className={container} key={index} ref={divContainerRef}>
         <img src={userImage} alt="" className={avatarImg} />
         <div className={messageInfo}>
           <h4>

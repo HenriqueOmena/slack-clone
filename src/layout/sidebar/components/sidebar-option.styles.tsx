@@ -21,7 +21,7 @@ const sidebarOptionStyle = makeStyles(theme =>
       padding: 10,
     },
     channel: {
-      padding: '10px 0',
+      padding: 10,
       fontWeight: 500,
     },
   })

@@ -7,11 +7,12 @@ import chatStyle from './chat.styles';
 import Messages from './components/messages/messages';
 import InputChat from './components/input/Input-chat';
 
-const Chat = () => {
+type channelDetails = firebase.firestore.DocumentData;
+
+const Chat: React.FC = () => {
   const classes = chatStyle();
   const { idChannel } = useParams();
-  // TODO: fix types for this state
-  const [channelDetails, setChannelDetails] = useState<any>();
+  const [channelDetails, setChannelDetails] = useState<channelDetails>();
 
   useEffect(() => {
     if (idChannel) {
