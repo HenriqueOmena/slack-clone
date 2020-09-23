@@ -28,7 +28,8 @@ const Login = () => {
         />
         <h1> Signin on Omena Slack Clone </h1>
         <p>
-          <strong>created by :</strong> www.henriqueomena.com
+          <strong>created by :</strong>{' '}
+          <a href="https://www.henriqueomena.com/">www.henriqueomena.com</a>
         </p>
         <Button
           variant="outlined"

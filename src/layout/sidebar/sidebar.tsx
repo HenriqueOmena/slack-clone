@@ -6,7 +6,7 @@ import db from 'firebaseConfig';
 import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 import Context from 'store/config/config';
 import sidebarStyle from './sidebar.styles';
-import SidebarOption from './components/sidebar-option';
+import SidebarOption from './components/option-sidebar/sidebar-option';
 
 export interface Channel {
   id: string;

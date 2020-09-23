@@ -1,4 +1,5 @@
 import { createStyles, makeStyles } from '@material-ui/core';
+import { grey } from '@material-ui/core/colors';
 
 const sidebarOptionStyle = makeStyles(theme =>
   createStyles({
@@ -23,6 +24,14 @@ const sidebarOptionStyle = makeStyles(theme =>
     channel: {
       padding: 10,
       fontWeight: 500,
+    },
+    inputAddChannel: {
+      backgroundColor: '#49274b',
+      color: 'white',
+      paddingLeft: 10,
+      '&:focus': {
+        outline: 'none',
+      },
     },
   })
 );
