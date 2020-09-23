@@ -6,6 +6,7 @@ import Chat from 'components/chat/chat';
 import AppStyle from 'App.styles';
 import Context from 'store/config/config';
 import { Login } from 'Pages/login';
+import Welcome from 'components/welcome/welcome';
 
 const App: React.FC = () => {
   const classes = AppStyle();
@@ -29,7 +30,9 @@ const App: React.FC = () => {
                 <Route path="/channel/:idChannel">
                   <Chat />
                 </Route>
-                <Route path="/">=)</Route>
+                <Route path="/">
+                  <Welcome />
+                </Route>
               </Switch>
             </div>
           </>
